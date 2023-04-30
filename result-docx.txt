@@ -5,28 +5,28 @@ Multifunctional air quality transmitter
 User manual
 Document version：V1.0
 Table of Contents
-	1.Product Brief	3
-	1.1product description	3
-	1.2Features	3
-	1.3Technical index	3
-	2.product model	4
-	3.device installation	5
-	3.1Check before installation	5
-	3.2Equipment size	5
-	3.3Installation Notes	6
-	3.3Examples of installation methods	7
-	4.Interface Description	8
-	5.Configuration software installation and use	8
-	5.1Software selection	8
-	5.2parameter settings	8
-	6.letter of agreement	9
-	6.1Communication basic parameters	9
-	6.2Data frame format definition	9
-	6.3Register address	10
-	6.4Communication protocol example and explanation	11
-	7.Common problems and solutions	12
-	8.contact details	13
-	9.Document history	13
+1.Product Brief	3
+1.1product description	3
+1.2Features	3
+1.3Technical index	3
+2.product model	4
+3.device installation	5
+3.1Check before installation	5
+3.2Equipment size	5
+3.3Installation Notes	6
+3.3Examples of installation methods	7
+4.Interface Description	8
+5.Configuration software installation and use	8
+5.1Software selection	8
+5.2parameter settings	8
+6.letter of agreement	9
+6.1Communication basic parameters	9
+6.2Data frame format definition	9
+6.3Register address	10
+6.4Communication protocol example and explanation	11
+7.Common problems and solutions	12
+8.contact details	13
+9.Document history	13
 1.Product Brief
 1.1product description
 RS-MG111-1 is an air environment comprehensive index monitor independently developed by our company for detecting PM2.5, PM10, temperature, humidity, air pressure, light, TVOC, O2, carbon dioxide (CO2), Carbon monoxide (CO), formaldehyde (CH2O) and other parameters are very powerful and basically cover various indicators that reflect air quality. The transmitter uses imported sensors and arithmetic chips, with high precision, high resolution and good stability. Widely used in building HVAC, building energy saving, smart home, schools, hospitals, airport stations and other places.
@@ -143,7 +143,7 @@ NH3
 All the above specifications except those that have been specially stated are measured under the environmental conditions: temperature 20 ℃, relative humidity 50% RH, 1 atmosphere, and the gas concentration to be measured does not exceed the sensor range.
 2.product model
 RS - MG 11 1-N01 1           
-                         Detector housing
+Detector housing
 RS485Output
 □Element combination form
 □Number of elements
@@ -215,14 +215,14 @@ NH3
 NH3 range 100ppm
 Selection examples：If the selected measurement elements are PM2.5, PM10, temperature, humidity, formaldehyde, O2, CH4, CO. Then the corresponding selection is RS-MG111-N01-1-ABGIKL
 3.device installation
-	3.1Check before installation
+3.1Check before installation
 Equipment List:
-	1. A multi-function air quality detector
-	2. Install a card holder (optional)
-	3. Pack of mounting screws
-	4. Product certificate, warranty card
-	3.2Equipment size
-	3.3Installation Notes
+1. A multi-function air quality detector
+2. Install a card holder (optional)
+3. Pack of mounting screws
+4. Product certificate, warranty card
+3.2Equipment size
+3.3Installation Notes
 First drill holes in the wall and fix the mounting base to the wall or roof. The installation aperture and spacing are shown in the following figure:
 Mounting base size (unit: mm)
 Fix the installation socket, and snap the device into the installation base, as shown in the following figure:
@@ -235,17 +235,17 @@ Wide voltage power input can be 10 ~ 30V. When connecting the 485 signal line, p
 485A
 Power jack（10~30V DC）
 5.Configuration software installation and use 
-	5.1Software selection
-		    Open the data package, select "Debug software" --- "485 parameter configuration software", findJust open it.
-	5.2parameter settings
-	①, select the correct COM port ("COM"-"Properties-Device Manager-Port" to view the COM port), the following figure lists the driver names of several different 485 converters.
+5.1Software selection
+Open the data package, select "Debug software" --- "485 parameter configuration software", findJust open it.
+5.2parameter settings
+①, select the correct COM port ("COM"-"Properties-Device Manager-Port" to view the COM port), the following figure lists the driver names of several different 485 converters.
 ②, only connect one device and power on, click the test baud rate of the software, the software will test the current device baud rate and address, the default baud rate is 4800bit / s, the default address is 0x01.
 ③ Modify the address and baud rate according to the needs of use, and at the same time, you can query the current functional status of the device.
 ④ If the test is unsuccessful, please recheck the device wiring and 485 driver installation.
 ⑤ Click on the corresponding gas to directly view the current real-time value of the gas.
 ⑥ Note: This software can only set three baud rates of 2400bit / s, 4800bit / s and 9600bit / s.
 6.letter of agreement
-	6.1Communication basic parameters
+6.1Communication basic parameters
 Coding
 8-bit binary
 Data bit
@@ -258,7 +258,7 @@ Error checking
 CRC (Redundant Cyclic Code)
 Baud rate
 2400bit / s, 4800bit / s, 9600bit / s, 19200bit / s can be set, the factory default is 4800bit / s
-	6.2Data frame format definition
+6.2Data frame format definition
 Using Modbus-RTU communication protocol, the format is as follows:
 Time for initial structure ≥ 4 bytes
 Address code = 1 byte
@@ -298,7 +298,7 @@ Check code
 2byte
 2byte
 2byte
-	6.3Register address
+6.3Register address
 Register address
 PLC or configuration address
 content
@@ -499,9 +499,9 @@ Read and write
 0 means 2400bit / s
 1 for 4800bit / s
 2 for 9600bit / s
-	6.4Communication protocol example and explanation
+6.4Communication protocol example and explanation
 6.4.1Read the PM2.5 real-time value (actual value) of device address 0x01
-	  Inquiry frame
+Inquiry frame
 address code
 function code
 starting address
@@ -514,7 +514,7 @@ Check digit high
 0x00 0x01
 0x84
 0x0A
-	  Reply frame
+Reply frame
 address code
 function code
 Returns the number of valid bytes
@@ -529,8 +529,8 @@ Check digit high
 0x49
 PM2.5:
 0012 H (hexadecimal) = 18 => PM2.5 = 18 ug / m3
-	6.4.2 Read the real-time value of SO2 (20ppm) at device address 0x01 (upload 10 times larger)
-	  Inquiry frame
+6.4.2 Read the real-time value of SO2 (20ppm) at device address 0x01 (upload 10 times larger)
+Inquiry frame
 address code
 function code
 starting address
@@ -543,7 +543,7 @@ Check digit high
 0x00 0x01
 0x85
 0xCF
-	 Reply frame
+Reply frame
 address code
 function code
 Returns the number of valid bytes
@@ -559,7 +559,7 @@ Check digit high
 SO2：
 0064 H(Hex) =100 => SO2=10ppm
 6.4.3SO2 calibration value written to device address 0x01 (enlarge 10 times to write)
-	Inquiry frame
+Inquiry frame
 address code
 function code
 starting address
@@ -572,7 +572,7 @@ Check code high byte
 0x00 0x14
 0x45
 0xDB
-	Reply frame
+Reply frame
 address code
 function code
 starting address
@@ -607,6 +607,6 @@ Fax: (86) 0531-67805165
 Website: www.renke.com
 Cloud platform address: www.0531yun.cn
 9.Document history
-	V1.0 document creation
-		Shandong Renke Control Technology Co., Ltd.
+V1.0 document creation
+Shandong Renke Control Technology Co., Ltd.
 6                        www.renkeer.com
