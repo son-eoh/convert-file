@@ -11,6 +11,7 @@ if '.doc' in filename:
     text = text.decode("utf-8")
     text = text.replace('|', '')
     text = re.sub(r'\s+$', '', text, flags=re.MULTILINE)  # remove spacing from the right
+    text = re.sub(r"^\s{2}(.+)$", '', text, flags=re.MULTILINE)  # remove spacing from the right
 
 if '.docx' in filename:
     text = docx2txt.process(filename)

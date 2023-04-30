@@ -1,0 +1,3 @@
+aspose-words
+docx2txt
+textract
