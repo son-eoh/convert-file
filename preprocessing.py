@@ -5,8 +5,6 @@ import textract
 filename = 'test.doc'
 output = 'test.txt'
 
-# read doc file to plain text
-
 
 if '.doc' in filename:
     text = textract.process(filename)
@@ -17,7 +15,7 @@ if '.doc' in filename:
 if '.docx' in filename:
     text = docx2txt.process(filename)
 
-pattern = r"(?m)^\s*$\n?"  # remove redundant lines
+pattern = r"(?m)^\s*$\n?"  # remove redundant empty lines
 text = re.sub(pattern, "", text)
 
 with open(output, 'w') as f:
