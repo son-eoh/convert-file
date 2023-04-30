@@ -1,11 +1,31 @@
-1.Product Brief  3
-3.device installation  5
-4.Interface Description    8
+RS-MG111-N01-1-ABL
+Multifunctional air quality transmitter
+(Type 485)
+User manual
+Document version：V1.0
+Table of Contents
+1.Product Brief 3
+1.1product description 3
+1.2Features 3
+1.3Technical index 3
+2.product model 4
+3.device installation 5
+3.1Check before installation 5
+3.2Equipment size 5
+3.3Installation Notes 6
+3.3Examples of installation methods 7
+4.Interface Description 8
 5.Configuration software installation and use 8
-6.letter of agreement  9
-7.Common problems and solutions  12
-8.contact details   13
-9.Document history  13
+5.1Software selection 8
+5.2parameter settings 8
+6.letter of agreement 9
+6.1Communication basic parameters 9
+6.2Data frame format definition 9
+6.3Register address 10
+6.4Communication protocol example and explanation 11
+7.Common problems and solutions 12
+8.contact details 13
+9.Document history 13
 1.Product Brief
 1.1product description
 RS-MG111-1 is an air environment comprehensive index monitor independently
@@ -34,64 +54,79 @@ altitudes.
 7. Adopt special 485 circuit, the communication is stable, and the power
 supply is within 10 ~ 30V wide voltage range.
 1.3Technical index
-DC power supply  DC 10-30V
+DC power supply DC 10-30V
 (default)
-Maximum power    0.5W (24V DC power supply)
+Maximum power 0.5W (24V DC power supply)
 consumption
-Detection        Temperature, humidity, PM2.5, PM10, air
-parameters       pressure, light, TVOC, CO2, formaldehyde,
-working          Temperature -10 ℃ -55 ℃; humidity 0 ~ 95%
-environment:     RH non-condensing
-Signal output    RS485 output (standard Modbus-RTU
+Detection Temperature, humidity, PM2.5, PM10, air
+parameters pressure, light, TVOC, CO2, formaldehyde,
+O3, CO, CH4, O2, SO2, NO2, H2, H2S, NH3
+working Temperature -10 ℃ -55 ℃; humidity 0 ~ 95%
+environment: RH non-condensing
+Signal output RS485 output (standard Modbus-RTU
+protocol)
 product material ABS
-Installation     Wall hanging, ceiling
+Installation Wall hanging, ceiling
 method
-Detection Range         ResolutionAccuracy          Preheat time
+Detection Range ResolutionAccuracy Preheat time
 parameters
-PM2.5     0~1000ug/m3   1ug/m3    ±10%              ≤2min
-PM10      0~1000ug/m3
-temperatur-40℃~+120℃    0.1℃      ±3%RH
+PM2.5 0~1000ug/m3 1ug/m3 ±10% ≤2min
+PM10 0~1000ug/m3
+temperatur-40℃~+120℃ 0.1℃ ±3%RH
 e
-humidity  0%RH-100%RH   0.1%RH    ±0.5℃
-Atmospheri0~120Kpa      0.1Kpa    ±0.15Kpa@25℃75Kpa
+humidity 0%RH-100%RH 0.1%RH ±0.5℃
+Atmospheri0~120Kpa 0.1Kpa ±0.15Kpa@25℃75Kpa
 c pressure
-Illuminati0~200000Lux   1Lux      ±7%(25℃)
+Illuminati0~200000Lux 1Lux ±7%(25℃)
 on
-TVOC      0~60000ppb    1ppb      ±8%FS±125ppb
-carbon    0~5000ppm     1ppm      ±(40ppm+ 3%F·S)   2min
-dioxide                                             (available),
-formaldehy0~5ppm        0.01ppm   ±5%FS             ≥5 minutes
+TVOC 0~60000ppb 1ppb ±8%FS±125ppb
+carbon 0~5000ppm 1ppm ±(40ppm+ 3%F·S) 2min
+dioxide (available),
+10min
+(maximum
+accuracy)
+formaldehy0~5ppm 0.01ppm ±5%FS ≥5 minutes
 de
-ozone     0~10ppm       0.01ppm   ±6%FS             ≥5 minutes
-O2        0~25%Vol      0.1%Vol   ±3%FS             ≥5 minutes
-H2S       0~100ppm      1ppm      ±3%FS             ≥5 minutes
-CH4       0~100%LEL     1%LEL     ±5%FS             ≥5 minutes
-CO        0~1000ppm     1ppm      ±3%FS             ≥5 minutes
-NO2       0~20ppm       0.1ppm    ±3%FS             ≥5 minutes
-SO2       0~20ppm       0.1ppm    ±3%FS             ≥5 minutes
-H2        0~1000ppm     1ppm      ±3%FS             ≥5 minutes
-NH3       0~100ppm      1ppm      ±2%FS             ≥5 minutes
+ozone 0~10ppm 0.01ppm ±6%FS ≥5 minutes
+O2 0~25%Vol 0.1%Vol ±3%FS ≥5 minutes
+H2S 0~100ppm 1ppm ±3%FS ≥5 minutes
+CH4 0~100%LEL 1%LEL ±5%FS ≥5 minutes
+CO 0~1000ppm 1ppm ±3%FS ≥5 minutes
+NO2 0~20ppm 0.1ppm ±3%FS ≥5 minutes
+SO2 0~20ppm 0.1ppm ±3%FS ≥5 minutes
+H2 0~1000ppm 1ppm ±3%FS ≥5 minutes
+NH3 0~100ppm 1ppm ±2%FS ≥5 minutes
 All the above specifications except those that have been specially stated
 are measured under the environmental conditions: temperature 20 ℃, relative
 humidity 50% RH, 1 atmosphere, and the gas concentration to be measured
 does not exceed the sensor range.
 2.product model
+RS - MG 11 1-N01 1
+(Detector housing
+(RS485Output
+□Element combination form
+□Number of elements
+□Compound air quality detector
+(Company code
 Element type description：
-11 optional    Numberin                Explanation
-detection      g
+11 optional Numberin Explanation
+detection g
 elements
-PM2.5          A
+PM2.5 A
 PM10
-temperature    B                       Air temperature
+temperature B Air temperature
+and humidity
 humidity
-Atmospheric    C                       0~120Kpa
+Atmospheric C 0~120Kpa
 pressure
-Illumination   D                       0~200000Lux
-TVOC           E                       Total volatile
-carbon dioxide F                       CO2 range
-formaldehyde   G       5P              CH2O range 0~5ppm
-ozone          H       10P             O3 range 0~10ppm
-In addition to I       O2     25VOL   O2 range 25VOL
+Illumination D 0~200000Lux
+TVOC E Total volatile
+organic compounds
+carbon dioxide F CO2 range
+0-5000ppm
+formaldehyde G 5P CH2O range 0~5ppm
+ozone H 10P O3 range 0~10ppm
+In addition to I O2 25VOL O2 range 25VOL
 the above
 detection
 elements, three
@@ -100,6 +135,13 @@ selected from
 the gas
 selection on
 the right
+J H2S 100P H2S range 100 ppm
+K CH4 100LEL CH4 range 100 LEL
+L CO 1000P CO range 1000 ppm
+M NO2 20P NO2 range 20ppm
+N SO2 20P SO2 range 20ppm
+O H2 1000P H2 range 1000ppm
+P NH3 100P NH3 range 100ppm
 Selection examples：If the selected measurement elements are PM2.5, PM10,
 temperature, humidity, formaldehyde, O2, CH4, CO. Then the corresponding
 selection is RS-MG111-N01-1-ABGIKL
@@ -111,23 +153,35 @@ Equipment List:
 3. Pack of mounting screws
 4. Product certificate, warranty card
 3.2Equipment size
+[pic]
 3.3Installation Notes
 First drill holes in the wall and fix the mounting base to the wall or
 roof. The installation aperture and spacing are shown in the following
 figure:
+[pic]
+Mounting base size (unit: mm)
+Fix the installation socket, and snap the device into the installation
 base, as shown in the following figure:
-[pic]      [pic]
+[pic] [pic]
 3.3Examples of installation methods
 3.3.1Ceiling installation
+[pic]
 3.3.2Wall-mounted installation
+[pic] [pic]
 4.Interface Description
 Wide voltage power input can be 10 ~ 30V. When connecting the 485 signal
 line, please note that the two lines A and B cannot be reversed, and the
 addresses of multiple devices on the bus cannot conflict.
+[pic]
 5.Configuration software installation and use
 5.1Software selection
+Open the data package, select "Debug software" --- "485 parameter
 configuration software", find[pic]Just open it.
 5.2parameter settings
+①, select the correct COM port ("COM"-"Properties-Device Manager-Port"
+to view the COM port), the following figure lists the driver names of
+several different 485 converters.
+[pic]
 ②, only connect one device and power on, click the test baud rate of the
 software, the software will test the current device baud rate and address,
 the default baud rate is 4800bit / s, the default address is 0x01.
@@ -139,15 +193,17 @@ driver installation.
 value of the gas.
 ⑥ Note: This software can only set three baud rates of 2400bit / s, 4800bit
 / s and 9600bit / s.
+[pic]
 6.letter of agreement
 6.1Communication basic parameters
-Coding    8-bit binary
-Data bit  8 bit
+Coding 8-bit binary
+Data bit 8 bit
 Parity bitno
-Stop bit  1 person
-Error     CRC (Redundant Cyclic Code)
+Stop bit 1 person
+Error CRC (Redundant Cyclic Code)
 checking
 Baud rate 2400bit / s, 4800bit / s, 9600bit / s, 19200bit / s
+can be set, the factory default is 4800bit / s
 6.2Data frame format definition
 Using Modbus-RTU communication protocol, the format is as follows:
 Time for initial structure ≥ 4 bytes
@@ -164,92 +220,166 @@ Data area: The data area is specific communication data, pay attention to
 the high byte of 16bits data first!
 CRC code: two-byte check code.
 Host inquiry frame structure:
-addressfunctionRegister    Register   Check digitCheck digit
-code   code    start       length     low        high
-1byte  1byte   2byte       2byte      1byte      1byte
+addressfunctionRegister Register Check digitCheck digit
+code code start length low high
+address
+1byte 1byte 2byte 2byte 1byte 1byte
 Slave response frame structure:
-address   function    Effective    Data Data area two
-code      code        bytes        area
-0000 H    40001       PM2.5 (ug/m3)Read Actual value
-0001 H    40002       PM10 (ug/m3) Read Actual value
-0002 H    40003       temperature（Read 10 times more upload
-0003 H    40004       humidity     Read 10 times more upload
-0004 H    40005       Atmospheric  Read 10 times more upload
-0005 H    40006       Illumination Read High actual light value
-0006 H    40007                         Low actual light value
-0007 H    40008       TVOC (ppb)   Read Actual value
-0008 H    40009       Co2 (ppm)    Read Actual value
-0009 H    40010       CH₂O (ppm)   Read 100 times more upload
-000A H    40011       O3 (ppm)     Read 100 times more upload
-000B H    40012       O (%Vol)     Read 100 times more upload
-000C H    40013       H2S(ppm)     Read Actual value
-000D H    40014       CH4 (%LEL)   Read Actual value
-000E H    40015       CO (ppm)     Read Actual value
-000F H    40016       NO2 (ppm)    Read 10 times more upload
-0010 H    40017       SO2 (ppm)    Read 10 times more upload
-0011 H    40018       H2 (ppm)     Read Actual value
-0012 H    40019       NH3 (ppm)    Read Actual value
-0050 H    40081       PM2.5        Read Actual value
-0051 H    40082       PM10         Read Actual value
-0052 H    40083       Temperature  Read 10 times more upload
-0053 H    40084       Humidity     Read 10 times more upload
-0054 H    40085       Atmospheric  Read 10 times more upload
-0056 H    40087       Illumination Read Actual value
-0057 H    40088       TVOC         Read Actual value
-0058 H    40089       CO2          Read Actual value
-0059 H    40090       Formaldehyde Read 100 times more upload
-005A H    40091       Ozone        Read 100 times more upload
-005B H    40092       Oxygen       Read 10 times more upload
-005C H    40093       Hydrogen     Read Actual value
-005D H    40094       Methane      Read Actual value
-005E H    40095       Carbon       Read Actual value
-005F H    40096       Nitrogen     Read 10 times more upload
-0060 H    40097       Calibration  Read 10 times more upload
-0061 H    40098       Hydrogen     Read Actual value
-0062 H    40099       Ammonia      Read Actual value
-07D0 H    42001       485 address  Read 1 ~ 255 (factory
-07D1 H    42002       485 baud rateRead 0 means 2400bit / s
+address function Effective Data Data area two
+code code bytes area
+0000 H 40001 PM2.5 (ug/m3)Read Actual value
+only
+0001 H 40002 PM10 (ug/m3) Read Actual value
+only
+0002 H 40003 temperature（Read 10 times more upload
+℃） only
+0003 H 40004 humidity Read 10 times more upload
+(%RH) only
+0004 H 40005 Atmospheric Read 10 times more upload
+pressure only
+(KPa)
+0005 H 40006 Illumination Read High actual light value
+(Lux) only
+0006 H 40007 Low actual light value
+0007 H 40008 TVOC (ppb) Read Actual value
+only
+0008 H 40009 Co2 (ppm) Read Actual value
+only
+0009 H 40010 CH₂O (ppm) Read 100 times more upload
+only
+000A H 40011 O3 (ppm) Read 100 times more upload
+only
+000B H 40012 O (%Vol) Read 100 times more upload
+only
+000C H 40013 H2S(ppm) Read Actual value
+only
+000D H 40014 CH4 (%LEL) Read Actual value
+only
+000E H 40015 CO (ppm) Read Actual value
+only
+000F H 40016 NO2 (ppm) Read 10 times more upload
+only
+0010 H 40017 SO2 (ppm) Read 10 times more upload
+only
+0011 H 40018 H2 (ppm) Read Actual value
+only
+0012 H 40019 NH3 (ppm) Read Actual value
+only
+0050 H 40081 PM2.5 Read Actual value
+Calibration and
+value write
+0051 H 40082 PM10 Read Actual value
+Calibration and
+value write
+0052 H 40083 Temperature Read 10 times more upload
+calibration and
+value write
+0053 H 40084 Humidity Read 10 times more upload
+calibration and
+value write
+0054 H 40085 Atmospheric Read 10 times more upload
+pressure and
+calibration write
+value
+0056 H 40087 Illumination Read Actual value
+calibration and
+value write
+0057 H 40088 TVOC Read Actual value
+calibration and
+value write
+0058 H 40089 CO2 Read Actual value
+calibration and
+value write
+0059 H 40090 Formaldehyde Read 100 times more upload
+calibration and
+value write
+005A H 40091 Ozone Read 100 times more upload
+calibration and
+value write
+005B H 40092 Oxygen Read 10 times more upload
+calibration and
+value write
+005C H 40093 Hydrogen Read Actual value
+sulfide and
+calibration write
+value
+005D H 40094 Methane Read Actual value
+calibration and
+value write
+005E H 40095 Carbon Read Actual value
+monoxide and
+calibration write
+value
+005F H 40096 Nitrogen Read 10 times more upload
+dioxide and
+calibration write
+value
+0060 H 40097 Calibration Read 10 times more upload
+value of and
+sulfur write
+dioxide
+0061 H 40098 Hydrogen Read Actual value
+calibration and
+value write
+0062 H 40099 Ammonia Read Actual value
+calibration and
+value write
+07D0 H 42001 485 address Read 1 ~ 255 (factory
+and default 1)
+write
+07D1 H 42002 485 baud rateRead 0 means 2400bit / s
+and 1 for 4800bit / s
+write2 for 9600bit / s
 6.4Communication protocol example and explanation
 6.4.1Read the PM2.5 real-time value (actual value) of device address 0x01
-addressfunctionstarting    Data lengthCheck digitCheck digit
-code   code    address                low        high
-0x01   0x03    0x00 0x00   0x00 0x01  0x84       0x0A
-addressfunctionReturns the  PM2.5valueCheck digitCheck digit
-code   code    number of              low        high
-0x01   0x03    0x02         0x00 0x12 0x38       0x49
+Inquiry frame
+addressfunctionstarting Data lengthCheck digitCheck digit
+code code address low high
+0x01 0x03 0x00 0x00 0x00 0x01 0x84 0x0A
+Reply frame
+addressfunctionReturns the PM2.5valueCheck digitCheck digit
+code code number of low high
+valid bytes
+0x01 0x03 0x02 0x00 0x12 0x38 0x49
 PM2.5:
 0012 H (hexadecimal) = 18 => PM2.5 = 18 ug / m3
+6.4.2 Read the real-time value of SO2 (20ppm) at
 device address 0x01 (upload 10 times larger)
-code   code    address                low        high
-0x01   0x03    0x00 0x10   0x00 0x01  0x85       0xCF
-code   code    number of              low        high
-0x01   0x03    0x02         0x00 0x64 0xB9       0xAF
+Inquiry frame
+addressfunctionstarting Data lengthCheck digitCheck digit
+code code address low high
+0x01 0x03 0x00 0x10 0x00 0x01 0x85 0xCF
+Reply frame
+addressfunctionReturns the SO2 value Check digitCheck digit
+code code number of low high
+valid bytes
+0x01 0x03 0x02 0x00 0x64 0xB9 0xAF
 SO2：
 0064 H(Hex) =100 => SO2=10ppm
 6.4.3SO2 calibration value written to device address 0x01 (enlarge 10 times
 to write)
 Inquiry frame
-address functionstarting   Write data Checksum   Check code
-code    code    address    area       low byte   high byte
-0x01    0x06    0x00 0x60  0x00 0x14  0x45       0xDB
+address functionstarting Write data Checksum Check code
+code code address area low byte high byte
+0x01 0x06 0x00 0x60 0x00 0x14 0x45 0xDB
 Reply frame
-address functionstarting   data input Checksum   Check code
-code    code    address               low byte   high byte
-0x01    0x06    0x00 0x60  0x00 0x14  0x45       0xDB
+address functionstarting data input Checksum Check code
+code code address low byte high byte
+0x01 0x06 0x00 0x60 0x00 0x14 0x45 0xDB
 Write SO2 calibration (set the calibration value to 2ppm):
 SO2 2ppm Expand ten times write = 20 => 0014 H (Hexadecimal)
 7.Common problems and solutions
 Device cannot be connected to PLC or computer
 possible reason:
 1) The computer has multiple COM ports, and the selected port is incorrect.
-2) The device  address  is  wrong,  or  there  are  devices  with  duplicate
+2) The device address is wrong, or there are devices with duplicate
 addresses (the factory default is all 1).
 3) Baud rate, check mode, data bit, stop bit error.
-4) The host's polling interval  and  waiting  time  for  answering  are  too
+4) The host's polling interval and waiting time for answering are too
 short, and both need to be set above 200ms.
 5) The 485 bus is disconnected, or the A and B lines are reversed.
-6) If the number of devices is too large or the wiring is  too  long,  power
-should be supplied nearby, and a 485  booster  should  be  added,  and  120Ω
+6) If the number of devices is too large or the wiring is too long, power
+should be supplied nearby, and a 485 booster should be added, and 120Ω
 terminal resistance should be added at the same time.
 7) The USB to 485 driver is not installed or damaged.
 8) The equipment is damaged.
@@ -266,6 +396,8 @@ Cloud platform address: www.0531yun.cn
 9.Document history
 V1.0 document creation
 -----------------------
+485B
+485A
 Power jack（10~30V DC）
 -----------------------
 6
